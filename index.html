@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Myportfolio.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="Home">
+      
+
+       <header class="header">
+        <div class="logo"><a href="#">Portfo<span>lio.</span></a></div>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a href="#Home" class="navbar-link">Home</a></li>
+                    <li><a href="#about" class="navbar-link">About</a></li>
+                    <li><a href="#project"  class="navbar-link">Projects</a></li>
+                    <li><a href="#contact" class="navbar-link">Contact</a></li>
+              
+            </ul>
+        </nav>
+        
+     
+      <div class="mobile-navbar-btn">
+        <ion-icon name="menu-outline" class="mobile-nav-icon"></ion-icon>
+        <ion-icon name="close-outline" class="mobile-nav-icon"></ion-icon>
+      </div>
+       </header>
+       <div class="container">
+       <div class="home-content">
+        <div class="text-1">Hello, my name is</div>
+        <div class="text-2">Rahul kumar Gupta</div>
+        <div class="text-3">And I'm a Developer</div>
+        <a href="#">Hire me</a>
+    </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="/rahulphoto.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="aboutheading">About Me</h1>
+                    <p> Hey I am Rahul Kumar Gupta . I am a full Stack Developer having theoretical and practical knowledge of FrontEnd And Backend, I also know Data Structure.  I have worked in a 
+                        Highway Construction Company for 1 year whose client was NHAI, so  I have working experience with teams and Clients. 
+                    </p>
+                    <div class="tab">
+                        <div class="tab-links active-link" onclick="opentab('Skills')">Skills</div>
+                        <div class="tab-links" onclick="opentab('Experience')">Experience</div>
+                        <div class="tab-links" onclick="opentab('Education')">Education</div>
+                    </div>
+                    <div class="tab-content active-tab" id="Skills">
+                        <ul>
+                        <li><span>Web Development</span>
+                            <ul>
+                             <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                             <li>React</li>
+                            </ul>
+                        <li><Span>UI/UX</Span>
+                            <ul><li>Designing Web</li></ul>
+                        <li><span>Data Structure</span></li>
+                        </ul>
+
+                    </div>
+                    <div class="tab-content" id="Experience">
+                        <ul>
+                        <li><span>2022-current</span><br>Professional Full Stack Development at Newton School</li>
+                     </ul>
+                         </div>
+                         <div class="tab-content" id="Education">
+                            <ul>
+                           <li><span>2022-current</span><br>Professional Full Stack Development at Newton School</li>
+                            <li><span>2016-2020</span><br>B.Tech from Government Engineering College,Ajmer</li>
+                            <li><Span>2015</Span><br>Senior Secondary Education from Rajasthan Board,Ajmer<br></li>
+                            <li><Span>2012</Span><br>Secondary Education from Rajasthan Board,Ajmer<br></li>
+                
+                            </ul>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+<!------------------------contact------------------->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contect-left">
+                <h1 class="sub-title">Contect Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>rahul011097@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+91-9772199197</p>
+                <div class="social-icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+                </div>
+                <br>
+                       <a href="/RahulguptaCV.pdf" Download class="btn">Download CV</a>
+            </div>
+            <div class="contect-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+
+       
+    </div>
+    <div class="copyright">
+        <p>copyright © rahul kumar gupta</p>
+    </div>
+</div>
+    <script src="myportifolio.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx-fupUQvDMzjACYw1fdZU-7ygbGj8RA0sPa2PWRqGSVFrhCXDxfj-ZKLfvFQNpFo_c/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Message sent Successfully "
+                setTimeout(function(){
+                    msg.innerHTML=""
+                },5000);
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+         </script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   <script src="foodrecipe.js"></script>
+   <script>const mobile_nav =document.querySelector(".mobile-navbar-btn");
+
+    const nav_header = document.querySelector(".header");
+    
+    const toggleNavbar=()=>{
+        nav_header.classList.toggle("active");
+    }
+    mobile_nav.addEventListener("click",()=>toggleNavbar());</script>
+
+
+     <script src="myportifolio.js"></script>
+</body>
+
+</html>
